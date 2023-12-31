@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+
 export const NavbarTopContainerStyled = styled.nav`
     display: flex;
     justify-content: center;
@@ -76,12 +77,14 @@ export const NavbarList = styled.ul`
 `
 
 export const NavLinkStyled = styled(NavLink)`
-    color: var(--white);
-    font-size: 18px;
+    color: var(--gray-100);
+    font-size: 16px;
     font-weight: 300;
-
+    position: relative;
+    padding: 4px 0;
+    text-transform: uppercase;
     &.active {
-        font-weight: 800;
+        font-weight: 600;
     }
 `
 

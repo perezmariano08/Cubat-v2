@@ -4,6 +4,7 @@ import { FaCartShopping, FaUser, FaInstagram } from "react-icons/fa6";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 
 import LogoNavbar from '/logo-blanco.png'
+import ModalCart from '../ModalCart/ModalCart';
 const Navbar = () => {
     return (
         <>  
@@ -32,6 +33,7 @@ const Navbar = () => {
                     </NavbarIcons>
                 </NavbarWrapper>
             </NavbarContainerStyled>
+            {/* <ModalCart/> */}
         </>
         
     )
