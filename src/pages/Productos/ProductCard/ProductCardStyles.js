@@ -19,7 +19,7 @@ export const ProductCardWrapper = styled.article`
     }
 
     @media (max-width: 768px) {
-        width: 200px;
+        width: 130px;
         padding: 10px;
     }
 `
