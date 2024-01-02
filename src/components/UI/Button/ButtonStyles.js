@@ -19,4 +19,8 @@ export const ButtonWrapper = styled(motion.button)`
         opacity: .85; 
 
     }
+
+    @media (max-width: 768px) {
+        font-size: 10px;
+    }
 `

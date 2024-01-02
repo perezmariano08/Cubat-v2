@@ -98,4 +98,6 @@ export const NavbarIcons = styled.div`
     
 `
 
-export const OpenModalMenu = styled(motion.div)``
+export const OpenModalMenu = styled(motion.div)`
+    color: var(--white);
+`

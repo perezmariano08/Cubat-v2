@@ -5,6 +5,9 @@ export const ProductsContainerStyled = styled.section`
     display: flex;
     justify-content: center;
     padding: 50px 0;
+    @media (max-width: 768px) {
+        padding: 50px 30px;
+    }
 `
 
 export const ProductsWrapper = styled.div`
@@ -14,4 +17,8 @@ export const ProductsWrapper = styled.div`
     justify-content: center;
     max-width: 1200px;
     width: 100%;
+
+    @media (max-width: 768px) {
+        gap: 20px;
+    }
 `

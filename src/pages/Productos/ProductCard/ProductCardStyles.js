@@ -17,6 +17,11 @@ export const ProductCardWrapper = styled.article`
             scale: 1.02;
         }
     }
+
+    @media (max-width: 768px) {
+        width: 200px;
+        padding: 10px;
+    }
 `
 
 export const ProductCardInfo = styled.div`
@@ -27,12 +32,27 @@ export const ProductCardInfo = styled.div`
         font-size: 22px;
         line-height: 22px;
         color: var(--blue);
+        min-height: 44px;
     }
     
     h4 {
         font-size: 18px;
         font-weight: 500;
         color: var(--gray-500);
+    }
+
+    @media (max-width: 968px) {
+        h3 {
+            font-size: 12px;
+            line-height: 12px;
+            min-height: 24px;
+        }
+
+        h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-500);
+        }   
     }
 `
 
@@ -44,6 +64,19 @@ export const ProductTitle = styled.div`
         color: var(--gray-400);
         text-transform: uppercase;
         font-size: 12px;
+    }
+
+    @media (max-width: 968px) {
+        span {
+            font-size: 8px;
+            line-height: 8px;
+        }
+
+        h4 {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--gray-500);
+        }   
     }
 `
 

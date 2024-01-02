@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLinkStyled, NavbarContainerStyled, NavbarIcons, NavbarList, NavbarTopContainerStyled, NavbarTopWrapper, NavbarWrapper, OpenModalMenu } from './NavbarStyles'
-import { FaCartShopping, FaUser, FaInstagram } from "react-icons/fa6";
-import { HiOutlineBars3BottomRight } from "react-icons/hi2";
+import { FaCartShopping, FaInstagram } from "react-icons/fa6";
+import { HiOutlineBars3BottomLeft } from "react-icons/hi2";
 
 import LogoNavbar from '/logo-blanco.png'
 import ModalCart from '../ModalCart/ModalCart';
@@ -16,6 +16,9 @@ const Navbar = () => {
             </NavbarTopContainerStyled>
             <NavbarContainerStyled>
                 <NavbarWrapper>
+                    <OpenModalMenu whileTap={{scale: .8}} className='menu-icon'>
+                        <HiOutlineBars3BottomLeft />
+                    </OpenModalMenu>
                     <img src={LogoNavbar} alt="Logo Cubat" className='logo-navbar'/>
                     <NavbarList>
                         <NavLinkStyled to={'/'}>Inicio</NavLinkStyled>
@@ -25,11 +28,7 @@ const Navbar = () => {
                         <NavLinkStyled to={'/sobre-nosotros'}>Sobre nosotros</NavLinkStyled>
                     </NavbarList>
                     <NavbarIcons>
-                        <FaUser />
                         <FaCartShopping/>
-                        <OpenModalMenu whileTap={{scale: .8}} className='menu-icon'>
-                            <HiOutlineBars3BottomRight />
-                        </OpenModalMenu>
                     </NavbarIcons>
                 </NavbarWrapper>
             </NavbarContainerStyled>
