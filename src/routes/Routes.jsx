@@ -4,6 +4,8 @@ import Layout from '../components/Layout/Layout'
 import Home from '../pages/Home/Home'
 import Productos from '../pages/Productos/Productos'
 import PageNotFound from '../pages/PageNotFound/PageNotFound'
+import Producto from '../pages/Producto/Producto'
+import Checkout from '../pages/Checkout/Checkout'
 const Routes = () => {
     return (
         <BrowserRouter>
@@ -11,6 +13,8 @@ const Routes = () => {
                 <ReactDomRoutes>
                     <Route path='/' element={<Home/>} />
                     <Route path='/productos' element={<Productos/>} />
+                    <Route path='/checkout' element={<Checkout/>} />
+                    <Route path='/productos/:productId' element={<Producto/>} />
                     <Route path='*' element={<PageNotFound/>} />
                 </ReactDomRoutes>
             </Layout>

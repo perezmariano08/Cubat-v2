@@ -95,9 +95,26 @@ export const NavbarIcons = styled.div`
     color: var(--white);
     font-size: 18px;
     font-weight: 200;
-    
 `
 
 export const OpenModalMenu = styled(motion.div)`
     color: var(--white);
+`
+
+export const IconCart = styled(motion.div)`
+    background: var(--blue);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--100);
+    text-align: center;
+    font-weight: 200;
+    cursor: pointer;
+    span {
+        font-size: 12px;
+        min-width: 16px;
+    }
 `

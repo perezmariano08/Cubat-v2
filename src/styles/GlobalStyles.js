@@ -19,6 +19,10 @@ export const GlobalStyles = createGlobalStyle`
         scroll-behavior: smooth;
     }
 
+    img {
+        user-select: none;
+    }
+
     body {
         background-color: var(--white);
     }

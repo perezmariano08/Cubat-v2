@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const ButtonWrapper = styled(motion.button)`
+export const ButtonWrapper = styled(motion(NavLink))`
     border: none;
     display: flex;
     gap: 6px;
@@ -11,13 +12,18 @@ export const ButtonWrapper = styled(motion.button)`
     color: var(--white);
     padding: 6px 10px;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     cursor: pointer;
     transition: .1s ease-in-out;
     &:hover {
         opacity: .85; 
 
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
     }
 
     @media (max-width: 768px) {

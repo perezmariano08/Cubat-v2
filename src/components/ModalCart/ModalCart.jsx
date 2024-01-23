@@ -1,83 +1,80 @@
-import React from 'react'
-import { ItemHandler, ItemInfo, ItemText, ModalCartClose, ModalCartContainerStyled, ModalCartDivider, ModalCartItem, ModalCartItems, ModalCartItemsContainer, ModalCartPrice, ModalCartTitle, ModalOverlayStyled } from './ModalCartStyles'
-import { IoClose } from "react-icons/io5";
-import { FaTrashCan } from 'react-icons/fa6';
-import Img from "/products/Automovil/prestiva.png"
+import { useNavigate } from "react-router-dom";
+import { ModalCartButtons, ModalCartContainerStyled, ModalCartDivider, ModalCartItems, ModalCartItemsContainer, ModalCartPrice, ModalCartTitle, ModalOverlayStyled } from './ModalCartStyles'
+import { FaAngleLeft } from 'react-icons/fa6';
 import Button from '../UI/Button/Button';
+import { useDispatch, useSelector } from "react-redux"
+import { clearCart, toggleHiddenCart } from '../../redux/cart/cartSlice';
+import { AnimatePresence } from 'framer-motion';
+import ModalCartItem from './ModalCartItem';
+import { formatPrice } from '../../utils/formatPrice';
 const ModalCart = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const hiddenCart = useSelector((state) => state.cart.hidden)
+    const {cartItems} = useSelector((state) => state.cart)
+    const totalPrice = cartItems.reduce((acc, item) => {
+        return (acc += item.price * item.quantity)
+    }, 0);
     return (
         <>
-            <ModalOverlayStyled />
-            <ModalCartContainerStyled>
-                <ModalCartClose>
-                    <IoClose className='icon-close'/>
-                </ModalCartClose>
-                <ModalCartTitle>
-                    <h3>carrito de compras</h3>
-                </ModalCartTitle>
-                <ModalCartDivider/>
-                <ModalCartItemsContainer>
-                    <ModalCartItems>
-                        <ModalCartItem>
-                            <img src={Img} />
-                            <ItemInfo>
-                                <ItemText>
-                                    <h3>145/80 R13 75T TL AR-300 FATE</h3>
-                                    <span>$150000</span>
-                                    <ItemHandler>
-                                        <span classname="quantity-handler down">-</span>
-                                        <span classname="item-quantity">1</span>
-                                        <span classname="quantity-handler up">+</span>
-                                        <FaTrashCan classname="item-trash"/>
-                                    </ItemHandler>
-                                </ItemText>
-                            </ItemInfo>
-                        </ModalCartItem>
-                        <ModalCartItem>
-                            <img src={Img} />
-                            <ItemInfo>
-                                <ItemText>
-                                    <h3>145/80 R13 75T TL AR-300 FATE</h3>
-                                    <span>$150000</span>
-                                    <ItemHandler>
-                                        <span classname="quantity-handler down">-</span>
-                                        <span classname="item-quantity">1</span>
-                                        <span classname="quantity-handler up">+</span>
-                                        <FaTrashCan classname="item-trash"/>
-                                    </ItemHandler>
-                                </ItemText>
-                            </ItemInfo>
-                        </ModalCartItem>
-                        <ModalCartItem>
-                            <img src={Img} />
-                            <ItemInfo>
-                                <ItemText>
-                                    <h3>145/80 R13 75T TL AR-300 FATE</h3>
-                                    <span>$150000</span>
-                                    <ItemHandler>
-                                        <span classname="quantity-handler down">-</span>
-                                        <span classname="item-quantity">1</span>
-                                        <span classname="quantity-handler up">+</span>
-                                        <FaTrashCan classname="item-trash"/>
-                                    </ItemHandler>
-                                </ItemText>
-                            </ItemInfo>
-                        </ModalCartItem>
-                    </ModalCartItems>
-                    
-                </ModalCartItemsContainer>
-                <ModalCartDivider/>
-                <ModalCartPrice>
-                    <h4>subTotal:</h4>
-                    <span>$0</span>
-                </ModalCartPrice>
-                <ModalCartPrice>
-                    <h4>subTotal:</h4>
-                    <span>$0</span>
-                </ModalCartPrice>
-                <ModalCartDivider/>
-                <Button>finalizar compra</Button>
-            </ModalCartContainerStyled>
+            {!hiddenCart && (
+                <ModalOverlayStyled
+                    onClick={() => dispatch(toggleHiddenCart())}
+                />
+            )}
+            <AnimatePresence>
+                {!hiddenCart && (
+                <ModalCartContainerStyled
+                    initial={{ translateX: 600 }}
+                    animate={{ translateX: 0 }}
+                    exit={{ translateX: 600 }}
+                    transition={{ type: "spring", damping: 27 }}
+                    key="cart-modal"
+                > 
+                    <ModalCartTitle>
+                        <FaAngleLeft onClick={() => dispatch(toggleHiddenCart())} className='icon-close'/>
+                        <h3>carrito de compras</h3>
+                    </ModalCartTitle>
+                    <ModalCartDivider/>
+                    <ModalCartItemsContainer>
+                        <ModalCartItems>
+                            {
+                                cartItems?.length ? (
+                                    cartItems.map((item) => {
+                                        return <ModalCartItem key={item.id} {...item}/>
+                                    })
+                                ) : (
+                                    <p>No hay productos en el carrito.</p>
+                                )
+                            }
+                        </ModalCartItems>
+                        
+                    </ModalCartItemsContainer>
+                    <ModalCartDivider/>
+                    <ModalCartPrice>
+                        <h4>total:</h4>
+                        <span>${formatPrice(totalPrice)}</span>
+                    </ModalCartPrice>
+                    <ModalCartDivider/>
+                    <ModalCartButtons>
+                        <Button 
+                            background='red' 
+                            disabled={!cartItems.length} 
+                            onClick={() => dispatch(clearCart())}
+                            >vaciar carrito
+                        </Button>
+                        <Button 
+                            to={`/checkout`}
+                            disabled={!cartItems.length}
+                            onClick={() => {
+                                dispatch(toggleHiddenCart())
+                            }}
+                        >finalizar compra</Button>
+                    </ModalCartButtons>
+                </ModalCartContainerStyled>
+            )}
+            </AnimatePresence>
+            
         </>
         
     )

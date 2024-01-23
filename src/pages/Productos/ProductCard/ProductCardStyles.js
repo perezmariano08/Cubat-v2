@@ -3,11 +3,20 @@ import styled from "styled-components";
 export const ProductCardWrapper = styled.article`
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    background-color: var(--gray-100);
+    gap: 15px;
     width: 300px;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+        width: 45%;
+    }
+`
+export const ProductImg = styled.div`
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--gray-200);
+    display: flex;
     img {
         width: 100%;
         transition: all .3s ease-in-out;
@@ -17,26 +26,23 @@ export const ProductCardWrapper = styled.article`
             scale: 1.02;
         }
     }
-
-    @media (max-width: 768px) {
-        width: 45%;
-        padding: 10px;
-    }
 `
 
 export const ProductCardInfo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    padding: 0 5px;
     h3 { 
-        font-size: 22px;
-        line-height: 22px;
-        color: var(--blue);
-        min-height: 44px;
+        font-size: 16px;
+        line-height: 16px;
+        color: var(--blue);   
+        min-height: 32px;
     }
     
     h4 {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 500;
         color: var(--gray-500);
     }

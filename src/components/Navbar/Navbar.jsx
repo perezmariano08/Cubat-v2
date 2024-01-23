@@ -1,13 +1,19 @@
 import React from 'react'
-import { NavLinkStyled, NavbarContainerStyled, NavbarIcons, NavbarList, NavbarTopContainerStyled, NavbarTopWrapper, NavbarWrapper, OpenModalMenu } from './NavbarStyles'
+import { IconCart, NavLinkStyled, NavbarContainerStyled, NavbarIcons, NavbarList, NavbarTopContainerStyled, NavbarTopWrapper, NavbarWrapper, OpenModalMenu } from './NavbarStyles'
 import { FaCartShopping, FaInstagram } from "react-icons/fa6";
 import { HiOutlineBars3BottomLeft } from "react-icons/hi2";
 
 import LogoNavbar from '/logo-blanco.png'
 import ModalCart from '../ModalCart/ModalCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleHiddenCart } from '../../redux/cart/cartSlice';
+
 const Navbar = () => {
+    const dispatch = useDispatch()
+    const totalCartItems = useSelector((state) => state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0)
+
     return (
-        <>  
+        <>
             <NavbarTopContainerStyled>
                 <NavbarTopWrapper>
                     <FaInstagram className='icon'/>
@@ -28,11 +34,14 @@ const Navbar = () => {
                         <NavLinkStyled to={'/sobre-nosotros'}>Sobre nosotros</NavLinkStyled>
                     </NavbarList>
                     <NavbarIcons>
-                        <FaCartShopping/>
+                        <IconCart whileTap={{scale: .85}} onClick={() => dispatch(toggleHiddenCart())}>
+                            <FaCartShopping/>
+                            <span>{totalCartItems}</span>
+                        </IconCart>
                     </NavbarIcons>
                 </NavbarWrapper>
             </NavbarContainerStyled>
-            {/* <ModalCart/> */}
+            <ModalCart/>
         </>
         
     )

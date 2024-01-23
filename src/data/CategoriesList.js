@@ -1,33 +1,27 @@
 export const CategoriesList = [
     {
       id: 1,
-      img: "automovil-camioneta-radial.png",
+      img: "automovil-y-camioneta-radial.png",
       title: "Automóvil y camioneta radial",
-      category: "automovil-camioneta-radial",
+      category: "Automóvil/camioneta radial",
     },
     {
       id: 2,
       img: "camion-radial.png",
       title: "Camión radial",
-      category: "camion-radial",
+      category: "Camión radial",
     },
     {
       id: 3,
       img: "agricola-convencional.png",
       title: "Agrícola convencional",
-      category: "agricola-convencional",
+      category: "Agrícola convencional",
     },
     {
       id: 4,
-      img: "agricola-radial.png",
-      title: "Agrícola radial",
-      category: "agricola-radial",
-    },
-    {
-      id: 5,
-      img: "camion-camioneta-convencional.png",
-      title: "Camión/camioneta convencional",
-      category: "camion-camioneta-convencional",
+      img: "camion-y-camioneta-convencional.png",
+      title: "Camion y camioneta convencional",
+      category: "Camión/camioneta convencional",
     }
   ];
   

@@ -9,9 +9,10 @@ export const ModalOverlayStyled = styled(motion.div)`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
+    cursor: pointer;
 `;
 
-export const ModalCartContainerStyled = styled.div`
+export const ModalCartContainerStyled = styled(motion.div)`
     position: fixed;
     top: 0;
     right: 0;
@@ -30,29 +31,22 @@ export const ModalCartContainerStyled = styled.div`
     }
 `
 
-export const ModalCartClose = styled.div`
-    display: flex;
-    justify-content: end;
-    align-items: center;
-
-    svg {
-        cursor: pointer;
-        font-size: 30px;
-        color: var(--blue);
-        text-align: center;
-    }
-`
-
 export const ModalCartTitle = styled.div`
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
+    align-items: center;
+    gap: 10px;
     h3 {
         color: var(--blue);
         text-transform: uppercase;
         font-size: 20px;
+        line-height: 20px;
         width: 100%;
+    }
+
+    .icon-close {
+        cursor: pointer;
+        color: var(--blue);
+        text-align: center;
     }
 `
 
@@ -65,7 +59,7 @@ export const ModalCartItemsContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 320px;
+    height: 420px;
     overflow-y: hidden;
 `
 export const ModalCartItems = styled.div`
@@ -77,7 +71,7 @@ export const ModalCartItems = styled.div`
     padding-right: 15px;
 `
 
-export const ModalCartItem = styled.div`
+export const ModalCartItemWrapper = styled.div`
     gap: 20px;
     display: flex;
     max-height: 150px;
@@ -106,6 +100,18 @@ export const ItemText = styled.div`
     gap: 15px;
     justify-content: center;
 
+    span {
+        font-size: 18px;
+        font-weight: 800;
+    }
+`
+
+export const ItemTitle = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+
     h3 {
         font-weight: 400;
         font-size: 18px;
@@ -113,9 +119,12 @@ export const ItemText = styled.div`
         text-transform: uppercase;
     }
 
-    span {
-        font-size: 18px;
-        font-weight: 800;
+    h4 {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        text-transform: uppercase;
+        color: var(--gray-400);
     }
 `
 
@@ -124,9 +133,10 @@ export const ItemHandler = styled.div`
     align-items: center;
     justify-content: start;
     gap: 20px;
+    
 
     .item-quantity {
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .quantity-handler {
@@ -134,13 +144,15 @@ export const ItemHandler = styled.div`
         justify-content: center;
         align-items: center;
         padding: 2px 8px;
-        border: 1px solid var(--blue);
         color: var(--blue);
-        font-weight: 500;
+        font-weight: 300;
+        cursor: pointer;
+        user-select: none;
     }
 
     svg {
         color: var(--red);
+        cursor: pointer;
     }
 `
 
@@ -159,7 +171,8 @@ export const ModalCartPrice = styled.div`
     }
 `
 
-export const ModalCartButton = styled.div`
-    width: 100%;
-    background-color: var(--blue);
+export const ModalCartButtons = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 `
