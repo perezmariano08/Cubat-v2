@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
     :root {
         --red: #BC0000;
         --blue: #000E1B;
+        --green: #57D163;
         /* Gray Scale */
         --white: #fafafa;
         --gray-100: #e9ebed;
@@ -18,7 +19,9 @@ export const GlobalStyles = createGlobalStyle`
     html {
         scroll-behavior: smooth;
     }
-
+    .no-scroll {
+    overflow: hidden;
+    }
     img {
         user-select: none;
     }

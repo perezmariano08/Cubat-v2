@@ -13,11 +13,11 @@ const ModalCartItem = ({id, category, title, desc, price, img, quantity, ancho, 
             <ItemInfo>
                 <ItemText>
                     <ItemTitle>
+                        <span>{category}</span>
                         <h3>{title}</h3>
-                        <h4>{category}</h4>
                     </ItemTitle>
                     
-                    <span>${formatPrice(price)}</span>
+                    <h4>${formatPrice(price)}</h4>
                     <ItemHandler>
                         <span className="quantity-handler down" onClick={() => dispatch(removeFromCart(id))}>-</span>
                         <span className="item-quantity">{quantity}</span>

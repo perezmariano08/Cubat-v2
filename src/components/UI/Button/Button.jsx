@@ -6,7 +6,7 @@ const Button = ({
         background = 'blue',
         disabled,
         onClick,
-        to
+        type,        
     }) => {
     return (
         <ButtonWrapper 
@@ -14,7 +14,7 @@ const Button = ({
             whileTap={{scale: .95}}
             background={background}
             disabled={disabled}
-            to={to}
+            type={type}
         >{children}</ButtonWrapper>
     )
 }

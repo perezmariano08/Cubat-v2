@@ -18,14 +18,46 @@ export const NavbarTopContainerStyled = styled.nav`
 export const NavbarTopWrapper = styled.div`
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     max-width: 1200px;
-    color: var(--white);
     gap: 5px;
+    
+
+`
+
+export const NavbarTopItems = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    
     span {
-        font-weight: 300;
+        font-weight: 200;
+        color: var(--white);
+        padding-bottom: 3px;
+    }
+
+    .number {
+        padding-bottom: 1px;
+    }
+`
+
+export const NavbarTopItem = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .icon {
+        color: var(--green);
+    }
+`
+
+export const NavbarTopSocial = styled.div`
+    display: flex;
+    gap: 10px;
+    .icon {
+        color: var(--white);
     }
 `
 
@@ -55,9 +87,7 @@ export const NavbarWrapper = styled.div`
     width: 100%;
     height: 100%;
     max-width: 1200px;
-    img {
-        height: 40%;
-    }
+    
     .menu-icon {
         display: none;
         cursor: pointer;
@@ -65,6 +95,13 @@ export const NavbarWrapper = styled.div`
             display: flex;
             font-size: 25px;
         }
+    }
+`
+export const NavbarLogo = styled(motion.a)`
+    height: 40%;
+    
+    img {
+        height: 100%;
     }
 `
 

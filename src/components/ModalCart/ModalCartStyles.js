@@ -61,6 +61,7 @@ export const ModalCartItemsContainer = styled.div`
     gap: 10px;
     height: 420px;
     overflow-y: hidden;
+    padding-bottom: 20px;
 `
 export const ModalCartItems = styled.div`
     display: flex;
@@ -68,7 +69,7 @@ export const ModalCartItems = styled.div`
     gap: 10px;
     height: 100%;
     overflow-y: auto;
-    padding-right: 15px;
+    padding: 0px 15px 15px 0;
 `
 
 export const ModalCartItemWrapper = styled.div`
@@ -77,7 +78,7 @@ export const ModalCartItemWrapper = styled.div`
     max-height: 150px;
     align-items: center;
     background-color: var(--white);
-    border: 1px solid var(--gray-300);
+    border: 1px solid var(--gray-200);
     color: var(--blue);
     padding: 20px 10px;
     border-radius: 20px;
@@ -100,9 +101,17 @@ export const ItemText = styled.div`
     gap: 15px;
     justify-content: center;
 
-    span {
-        font-size: 18px;
-        font-weight: 800;
+    h4 {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--gray-500);
+    }
+    @media (max-width: 968px) {
+        h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-500);
+        }   
     }
 `
 
@@ -113,18 +122,29 @@ export const ItemTitle = styled.div`
     justify-content: center;
 
     h3 {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 18px;
+        font-size: 16px;
+        line-height: 16px;
         text-transform: uppercase;
     }
 
-    h4 {
+    span {
         font-weight: 400;
         font-size: 12px;
         line-height: 12px;
         text-transform: uppercase;
         color: var(--gray-400);
+    }
+    @media (max-width: 968px) {
+        h3 {
+            font-size: 12px;
+            line-height: 12px;
+            min-height: 24px;
+        }
+
+        span {
+            font-size: 8px;
+            line-height: 8px;
+        }   
     }
 `
 
@@ -161,11 +181,7 @@ export const ModalCartPrice = styled.div`
     justify-content: space-between;
     align-items: baseline;
     text-transform: uppercase;
-    h4 {
-        font-weight: 400;
-        font-size: 20px;
-    }
-    span {
+    h4, span {
         font-weight: 800;
         font-size: 18px;
     }

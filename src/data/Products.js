@@ -87,6 +87,17 @@ export const products = [
         alto: 70,
         rodado: 14,
     },
+    {
+        id: 9,
+        category: "Baterias",
+        title: "BATERIA MOURA 100HA 12x110 ALTA",        
+        desc: "",
+        price: 155000,
+        img: "Baterias/moura.png",
+        ancho: 165,
+        alto: 70,
+        rodado: 14,
+    },
     
 ]
 

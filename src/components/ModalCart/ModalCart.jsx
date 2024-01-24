@@ -63,10 +63,10 @@ const ModalCart = () => {
                             onClick={() => dispatch(clearCart())}
                             >vaciar carrito
                         </Button>
-                        <Button 
-                            to={`/checkout`}
+                        <Button
                             disabled={!cartItems.length}
                             onClick={() => {
+                                navigate('/checkout')
                                 dispatch(toggleHiddenCart())
                             }}
                         >finalizar compra</Button>
