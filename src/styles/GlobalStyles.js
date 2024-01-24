@@ -39,6 +39,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 400;
         font-style: normal;
     }
+    
 
     /*? Headings Desktop */
     h1 {
@@ -46,6 +47,10 @@ export const GlobalStyles = createGlobalStyle`
         line-height: 45px;
         font-weight: 700;
     }
+    .visible {
+        opacity: 1 !important;
+    }
+
 
     h2 {
         font-size: 40px;

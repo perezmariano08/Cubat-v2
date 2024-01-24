@@ -6,7 +6,6 @@ import Gif from '/fate-banner-primary.gif'
 const Home = () => {
     return (
         <>
-            <img src={Gif} alt="" srcset="" />
             <Ubication/>
             <Benefits/>
         </>

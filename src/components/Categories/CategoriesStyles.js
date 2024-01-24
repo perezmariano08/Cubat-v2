@@ -35,6 +35,7 @@ export const CategoryWrapper = styled(motion.div)`
     &:hover{
         background-color: var(--blue);
     }
+
     img {
         height: 100px;
         position: absolute;
@@ -50,7 +51,11 @@ export const CategoryWrapper = styled(motion.div)`
         color: var(--white);
     }
 
-
+    @media (max-width: 968px) {
+        &:hover{
+            background-color: var(--red);
+        }
+    }
 
     @media (max-width: 768px) {
         p {

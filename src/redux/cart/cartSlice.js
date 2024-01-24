@@ -5,7 +5,8 @@ import { SHIPPING_COST } from "../../utils/constants"
 const INITIAL_STATE = {
     cartItems: [],
     shippingCost: 0,
-    hidden: true
+    hidden: true,
+    showModal:false,
 }
 
 const cartSlice = createSlice({
@@ -30,11 +31,15 @@ const cartSlice = createSlice({
         },
         //Limpiar todo el  carrito
         clearCart: (state) => {
-            return {
+            if(window.confirm('¿Desea vaciar el carrito de compras?')) {
+                return {
                 ...state,
                 cartItems: [],
                 shippingCost: 0
             } 
+            } else {
+
+            }
         },
         //Toggle de apertura/cierre de carrito
         toggleHiddenCart: (state) => {
@@ -45,10 +50,12 @@ const cartSlice = createSlice({
         },
         // Eliminar un artículo específico del carrito
         removeItem: (state, action) => {
-            return {
-                ...state,
-                cartItems: state.cartItems.filter(item => item.id !== action.payload),
-                shippingCost: resetShippingCost(state.cartItems, SHIPPING_COST)
+            if(window.confirm('¿Desea eliminar este producto del carrito?')){
+                return {
+                    ...state,
+                    cartItems: state.cartItems.filter(item => item.id !== action.payload),
+                    shippingCost: resetShippingCost(state.cartItems, SHIPPING_COST)
+                }
             }
         },
         // Nueva acción para controlar el estado del modal

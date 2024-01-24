@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux'
 
 const ModalCartItem = ({id, category, title, desc, price, img, quantity, ancho, alto, rodado}) => {
     const dispatch = useDispatch()
+    const enabledControl = quantity > 1 
+    console.log(enabledControl);
     return (
         <ModalCartItemWrapper>
             <img src={`products/${img}`} />
@@ -19,7 +21,11 @@ const ModalCartItem = ({id, category, title, desc, price, img, quantity, ancho, 
                     
                     <h4>${formatPrice(price)}</h4>
                     <ItemHandler>
-                        <span className="quantity-handler down" onClick={() => dispatch(removeFromCart(id))}>-</span>
+                        {!enabledControl 
+                        ? 
+                            <span className="quantity-handler down disabled">-</span> 
+                        :
+                            <span className="quantity-handler down" onClick={() => dispatch(removeFromCart(id))}>-</span>}
                         <span className="item-quantity">{quantity}</span>
                         <span className="quantity-handler up" onClick={() => dispatch(addToCart({img, title, desc, price, quantity, id}))}>+</span>
                         <FaTrashCan className="item-trash" onClick={() => dispatch(removeItem(id))} />

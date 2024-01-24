@@ -2,13 +2,15 @@ import { ProductButtons, ProductCardInfo, ProductCardWrapper, ProductImg, Produc
 import { FaCartShopping, FaEye } from 'react-icons/fa6'
 import Button from '../../../components/UI/Button/Button'
 import { formatPrice } from '../../../utils/formatPrice';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../../redux/cart/cartSlice';
+import { useDispatch} from 'react-redux';
+import { addToCart} from '../../../redux/cart/cartSlice';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({id, category, title, desc, price, img, ancho, alto, rodado}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    
     return (
         <ProductCardWrapper>
             <ProductImg onClick={() => navigate(`/productos/${id}`)}>
@@ -25,7 +27,9 @@ const ProductCard = ({id, category, title, desc, price, img, ancho, alto, rodado
                         <FaEye/>
                         <span>ver</span>
                     </Button>
-                    <Button onClick={() => dispatch(addToCart({id, category, title, desc, price, img, ancho, alto, rodado}))}>
+                    <Button onClick={() => {
+                        dispatch(addToCart({id, category, title, desc, price, img, ancho, alto, rodado}));
+                    }}>
                         <FaCartShopping/>
                         <span>agregar</span>
                     </Button>

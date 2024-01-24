@@ -10,6 +10,7 @@ import { toggleHiddenCart } from '../../redux/cart/cartSlice';
 
 const Navbar = () => {
     const dispatch = useDispatch()
+
     const totalCartItems = useSelector((state) => state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0)
     
     return (
@@ -54,8 +55,10 @@ const Navbar = () => {
                         </IconCart>
                     </NavbarIcons>
                 </NavbarWrapper>
+                
             </NavbarContainerStyled>
             <ModalCart/>
+            
         </>
         
     )

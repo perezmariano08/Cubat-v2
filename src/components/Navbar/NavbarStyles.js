@@ -132,6 +132,7 @@ export const NavbarIcons = styled.div`
     color: var(--white);
     font-size: 18px;
     font-weight: 200;
+    position: relative;
 `
 
 export const OpenModalMenu = styled(motion.div)`

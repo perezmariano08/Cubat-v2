@@ -5,13 +5,17 @@ export const addItemToCart = (cartItems, product) => {
 
     if(productInCart) {
         return cartItems.map((item) => {
+            
             return item.id === productInCart.id
             ? {
                 ...item,
                 quantity: item.quantity + 1
-              }
+                
+            }
             : item
+            
         })
+        
     } else {
         return [
             ...cartItems,
@@ -35,7 +39,9 @@ export const removeItemFromCart = (cartItems, id) => {
             : item
         })
     } else {
-        return cartItems.filter((item) => item.id !== productToRemove.id)
+        
+            return cartItems.filter((item) => item.id !== productToRemove.id)
+        
     }
 }
 

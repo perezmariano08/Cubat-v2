@@ -82,8 +82,14 @@ export const ModalCartItemWrapper = styled.div`
     color: var(--blue);
     padding: 20px 10px;
     border-radius: 20px;
+    user-select: none;
     img {
         height: 100%;
+    }
+    @media (max-width: 968px) {
+        img {
+            height: 80px;
+        }   
     }
 `
 
@@ -173,6 +179,10 @@ export const ItemHandler = styled.div`
     svg {
         color: var(--red);
         cursor: pointer;
+    }
+
+    .down.disabled {
+        visibility: hidden;
     }
 `
 
