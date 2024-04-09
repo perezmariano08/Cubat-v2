@@ -30,28 +30,28 @@ export const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Cubat';
-        src: local('Cubat Light'), url(../src/assets/uber-font/UberMoveAR-Light.ttf) format('truetype');
+        src: local('Cubat Light'), url(./uber-font/UberMoveAR-Light.ttf) format('truetype');
         font-weight: 100;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Cubat';
-        src: local('Cubat Regular'), url(../src/assets/uber-font/UberMoveAR-Regular.ttf) format('truetype');
+        src: local('Cubat Regular'), url(./uber-font/UberMoveAR-Regular.ttf) format('truetype');
         font-weight: 200;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Cubat';
-        src: local('Cubat Medium'), url(../src/assets/uber-font/UberMoveAR-Medium.ttf) format('truetype');
+        src: local('Cubat Medium'), url(./uber-font/UberMoveAR-Medium.ttf) format('truetype');
         font-weight: 300;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Cubat';
-        src: local('Cubat Bold'), url(../src/assets/uber-font/UberMoveAR-Bold.ttf) format('truetype');
+        src: local('Cubat Bold'), url(./uber-font/UberMoveAR-Bold.ttf) format('truetype');
         font-weight: 400;
         font-style: normal;
     }
