@@ -8,24 +8,28 @@ export const ButtonWrapper = styled(motion.button)`
     align-items: center;
     justify-content: center;
     background: ${({ background }) => `var(--${background})`};
+    width: ${({ width }) => `${width}`};
     color: var(--white);
-    padding: 8px 10px;
+    padding: 8px 16px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     cursor: pointer;
     transition: .1s ease-in-out;
-
-    &:hover {
-        opacity: .85; 
-    }
-
+    user-select: none;
+    
     &:disabled {
         cursor: not-allowed;
         opacity: 0.5;
     }
 
     @media (max-width: 768px) {
-        font-size: 10px;
+        cursor: none;
+    }
+
+    @media (min-width: 768px) {
+        &:hover {
+            opacity: .85; 
+        }
     }
 `

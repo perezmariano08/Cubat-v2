@@ -11,7 +11,7 @@ const Category = ({title, category}) => {
         <CategoryWrapper
             selected={category === selectedCategory}
             onClick={() => dispatch(selectCategory(category))}
-            whileTap={{scale: .95}}
+            whileHover={{ scale: 0.98 }}
         >
             <p>{title}</p>
         </CategoryWrapper>

@@ -1,12 +1,19 @@
 import React from 'react'
-import { IconCart, NavLinkStyled, NavbarContainerStyled, NavbarIcons, NavbarList, NavbarLogo, NavbarTopContainerStyled, NavbarTopItem, NavbarTopItems, NavbarTopSocial, NavbarTopWrapper, NavbarWrapper, OpenModalMenu } from './NavbarStyles'
-import { FaCartShopping, FaEnvelope, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
-import { HiOutlineBars3BottomLeft } from "react-icons/hi2";
+import { IconAccount, IconCart, NavLinkStyled, NavbarContainerStyled, NavbarIcons, NavbarList, NavbarLogo, NavbarTopContainerStyled, NavbarTopItem, NavbarTopItems, NavbarTopSocial, NavbarTopWrapper, NavbarWrapper, OpenModalMenu } from './NavbarStyles'
+import { FaCartShopping, FaInstagram, FaUser, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookSquare, FaUserAlt, FaUserAltSlash } from "react-icons/fa";
+import { IoIosMenu } from "react-icons/io";
+import { BsEnvelopeAt } from "react-icons/bs";
+import { LuUserCircle } from "react-icons/lu";
+import { IoCartOutline } from "react-icons/io5";
 
-import LogoNavbar from '/logo-blanco.png'
+import LogoNavbar from '/Logos/Logotipo-Positivo.png'
 import ModalCart from '../ModalCart/ModalCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleHiddenCart } from '../../redux/cart/cartSlice';
+import { toggleHiddenMenu } from '../../redux/menu/menuSlice';
+import ModalMenu from '../ModalMenu/ModalMenu';
+import { CgMenuGridO } from "react-icons/cg";
 
 const Navbar = () => {
     const dispatch = useDispatch()
@@ -18,47 +25,50 @@ const Navbar = () => {
             <NavbarTopContainerStyled>
                 <NavbarTopWrapper>
                     <NavbarTopItems>
-                        <NavbarTopItem to={'/'}>
-                            <FaEnvelope className='icon'/>
-                            <span>contacto@cubatoficial.online</span>
+                        <NavbarTopItem target='_blank' to={'mailto:contacto@cubatoficial.online'}>
+                            <BsEnvelopeAt className='icon'/>
+                            <span>neumaticor.oficial@gmail.com</span>
                         </NavbarTopItem>
-                        <NavbarTopItem to={'/'}>
+                        <NavbarTopItem target='_blank' to={'https://wa.link/5je7pn'}>
                             <FaWhatsapp className='icon'/>
-                            <span className='number'>3512 34-5678</span>
+                            <span className='number'>3517649357</span>
                         </NavbarTopItem>
                     </NavbarTopItems>
                     <NavbarTopSocial>
-                        <FaInstagram className='icon'/>
-                        <FaFacebook className='icon'/>
+                        <a target='_blank' href="https://www.instagram.com/neumaticor.ok/"><FaInstagram className='icon'/></a>
+                        <a target='_blank' href="https://www.facebook.com/Cubat.ok/"><FaFacebookSquare className='icon'/></a>
                     </NavbarTopSocial>
                 </NavbarTopWrapper>
             </NavbarTopContainerStyled>
             <NavbarContainerStyled>
                 <NavbarWrapper>
-                    <OpenModalMenu whileTap={{scale: .8}} className='menu-icon'>
-                        <HiOutlineBars3BottomLeft />
-                    </OpenModalMenu>
-                    <NavbarLogo href={'/'} whileTap={{scale: .95}}>
+                    <NavbarLogo whileTap={{scale: .95}} href='/'>
                         <img src={LogoNavbar} alt="Logo Cubat" className='logo-navbar'/>
                     </NavbarLogo>
                     <NavbarList>
-                        <NavLinkStyled to={'/'}>Inicio</NavLinkStyled>
-                        <NavLinkStyled to={'/servicios'}>Servicios</NavLinkStyled>
-                        <NavLinkStyled to={'/productos'}>Productos</NavLinkStyled>
-                        <NavLinkStyled to={'/contacto'}>Contacto</NavLinkStyled>
-                        <NavLinkStyled to={'/sobre-nosotros'}>Sobre nosotros</NavLinkStyled>
+                        <li><NavLinkStyled to={'/'}>Inicio</NavLinkStyled></li>
+                        <li><NavLinkStyled to={'/servicios'}>Servicios</NavLinkStyled></li>
+                        <li><NavLinkStyled to={'/productos'}>Productos</NavLinkStyled></li>
+                        <li><NavLinkStyled to={'/contacto'}>Contacto</NavLinkStyled></li>
+                        <li><NavLinkStyled to={'/sobre-nosotros'}>Sobre nosotros</NavLinkStyled></li>
                     </NavbarList>
-                    <NavbarIcons>
+                    <OpenModalMenu whileTap={{scale: .8}} className='menu-icon' onClick={() => dispatch(toggleHiddenMenu())}>
+                        <CgMenuGridO />
+                    </OpenModalMenu>
+                    {/* <NavbarIcons>
+                        <IconAccount whileTap={{scale: .85}} to={"/"}>
+                            <LuUserCircle/>
+                            <span>Mi Cuenta</span>
+                        </IconAccount>
                         <IconCart whileTap={{scale: .85}} onClick={() => dispatch(toggleHiddenCart())}>
-                            <FaCartShopping/>
+                            <IoCartOutline/>
                             <span>{totalCartItems}</span>
                         </IconCart>
-                    </NavbarIcons>
+                    </NavbarIcons> */}
                 </NavbarWrapper>
-                
             </NavbarContainerStyled>
-            <ModalCart/>
-            
+            {/* <ModalCart/> */}
+            <ModalMenu/>
         </>
         
     )

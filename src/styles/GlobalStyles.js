@@ -16,12 +16,58 @@ export const GlobalStyles = createGlobalStyle`
         --gray-700: #1B1D1F;
         --black: #121212;
     }
+
+    .container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .wrapper {
+        width: 100%;
+        display: flex;
+        max-width: 1260px;
+    }
+
+    @font-face {
+        font-family: 'Cubat';
+        src: local('Cubat Light'), url(src/assets/uber-font/UberMoveAR-Light.ttf) format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Cubat';
+        src: local('Cubat Regular'), url(src/assets/uber-font/UberMoveAR-Regular.ttf) format('truetype');
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Cubat';
+        src: local('Cubat Medium'), url(src/assets/uber-font/UberMoveAR-Medium.ttf) format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Cubat';
+        src: local('Cubat Bold'), url(src/assets/uber-font/UberMoveAR-Bold.ttf) format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
     html {
         scroll-behavior: smooth;
     }
+
     .no-scroll {
-    overflow: hidden;
+        overflow: hidden;
+        overflow: -moz-scrollbars-none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer / Edge */
     }
+
     img {
         user-select: none;
     }
@@ -35,52 +81,69 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         text-decoration: none;
         list-style-type: none;
-        font-family: 'Outfit', sans-serif;
-        font-weight: 400;
-        font-style: normal;
+        font-family: 'Cubat', sans-serif;
     }
     
 
-    /*? Headings Desktop */
-    h1 {
-        font-size: 45px;
-        line-height: 45px;
-        font-weight: 700;
-    }
+    /*? Headings */
+    
+
     .visible {
         opacity: 1 !important;
     }
 
+    h1 {
+        font-size: 50px;
+        line-height: 50px;
+        font-weight: 400;
+        text-transform: uppercase;
+        @media (max-width: 575px) {
+            h1 {
+                
+            }
+        }
+    }
 
     h2 {
-        font-size: 40px;
-        line-height: 40px;
-        font-weight: 700;
+        font-size: 45px;
+        line-height: 45px;
+        font-weight: 400;
+        text-transform: uppercase;
+        @media (max-width: 575px) {
+            h2 {
+                
+            }
+        }
     }
 
     h3 {
-        font-size: 35px;
-        line-height: 35px;
-        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: 400;
     }
 
     h4 {
-        font-size: 30px;
-        font-weight: 700;
+        font-size: 35px;
+        line-height: 35px;
+        font-weight: 400;
     }
 
     h5 {
-        font-size: 25px;
-        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 400;
     }
 
     h6 {
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 25px;
+        line-height: 25px;
+        font-weight: 400;
     }
 
     p {
-        font-weight: 300;
+        font-size: 18px;
+        font-weight: 200;
+        line-height: normal;
     }
 
     /* Mobile */

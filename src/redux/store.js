@@ -5,17 +5,19 @@ import storage from "redux-persist/lib/storage"
 import categoriesReducer from './categories/CategoriesSlice'
 import productsReducer from './products/productsSlice'
 import cartReducer from './cart/cartSlice'
+import menuReducer from './menu/menuSlice'
 
 const reducers = combineReducers({
     categories: categoriesReducer,
     products: productsReducer,
     cart: cartReducer,
+    menu: menuReducer
 })
 
 const persistConfig = {
     key: "root",
     storage,
-    whiteList: ["categories", "cart"]
+    whiteList: ["categories", "cart", "menu"]
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

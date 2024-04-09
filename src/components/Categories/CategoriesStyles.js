@@ -32,9 +32,7 @@ export const CategoryWrapper = styled(motion.div)`
     transition: all .3s ease-in-out;
     position: relative;
     user-select: none;
-    &:hover{
-        background-color: var(--blue);
-    }
+    
 
     img {
         height: 100px;
@@ -51,9 +49,9 @@ export const CategoryWrapper = styled(motion.div)`
         color: var(--white);
     }
 
-    @media (max-width: 968px) {
+    @media (min-width: 968px) {
         &:hover{
-            background-color: var(--red);
+            background-color: var(--blue);
         }
     }
 

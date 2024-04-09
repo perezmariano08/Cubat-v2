@@ -6,7 +6,8 @@ const Button = ({
         background = 'blue',
         disabled,
         onClick,
-        type,        
+        type,
+        width = "fit-content"        
     }) => {
     return (
         <ButtonWrapper 
@@ -15,6 +16,7 @@ const Button = ({
             background={background}
             disabled={disabled}
             type={type}
+            width={width}
         >{children}</ButtonWrapper>
     )
 }

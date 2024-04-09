@@ -23,11 +23,11 @@ const ProductCard = ({id, category, title, desc, price, img, ancho, alto, rodado
                 </ProductTitle>
                 <h4>${formatPrice(price)}</h4>
                 <ProductButtons>
-                    <Button background="red" onClick={() => navigate(`/productos/${id}`)}>
+                    <Button width='100%' background="red" onClick={() => navigate(`/productos/${id}`)}>
                         <FaEye/>
                         <span>ver</span>
                     </Button>
-                    <Button onClick={() => {
+                    <Button width='100%' onClick={() => {
                         dispatch(addToCart({id, category, title, desc, price, img, ancho, alto, rodado}));
                     }}>
                         <FaCartShopping/>

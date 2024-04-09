@@ -36,6 +36,9 @@ const ModalCart = () => {
                         <h3>carrito de compras</h3>
                     </ModalCartTitle>
                     <ModalCartDivider/>
+
+
+
                     <ModalCartItemsContainer>
                         <ModalCartItems>
                             {
@@ -50,6 +53,11 @@ const ModalCart = () => {
                         </ModalCartItems>
                         
                     </ModalCartItemsContainer>
+
+
+
+
+                    
                     <ModalCartDivider/>
                     <ModalCartPrice>
                         <h4>total:</h4>

@@ -1,40 +1,71 @@
 import styled from "styled-components";
 
 export const FooterContainerStyled = styled.footer`
-    background-color: var(--black);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--gray-100);
+    background-color: var(--blue);
 `
 
 export const FooterWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    padding: 50px 100px;
-    max-width: 1200px;
-    gap: 50px;
+    padding: 50px 30px;
+    flex-direction: column;
+    gap: 40px;
+    color: var(--gray-400);
+    font-weight: 200;
 `
 
-export const FooterSocial = styled.div`
+export const FooterInfo = styled.div`
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    justify-content: space-between;
+`
+
+export const FooterBrand = styled.div`
+    display: flex;
+    flex-direction:column;
     gap: 30px;
-    font-weight: 500;
+    width: 500px;
     img {
-        width: 50px;
+        width: 120px;
     }
 `
 
 export const FooterSocialIcons = styled.div`
     display: flex;
-    gap: 20px;
-    font-size: 25px;
-    a {
-        color: var(--white);
+    gap: 10px;
+    i, svg {
+        color: var(--green);
     }
+    
+`
+
+export const FooterMenu = styled.ul`
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    gap: 20px;
+`
+
+export const FooterContact = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+`
+
+export const ItemFooterContact = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--white);
+    span {
+        color: var(--green);
+    }
+`
+
+export const FooterDivider = styled.div`
+    width: 100%;
+    height: 1px;
+    background-color: var(--gray-400);
+`
+
+export const FooterCopyright = styled.div`
+    
 `

@@ -16,7 +16,7 @@ const Benefits = () => {
                 <BenefitItem>
                     <FaCreditCard className='benefit-icon'/>
                     <BenefitText>
-                        <span className="benefit-title">pagá como quieras</span>
+                        <span className="benefit-title">todos los medios de pago</span>
                         <span className="benefit-description">Tarjetas de crédito o efectivo.</span>
                     </BenefitText>
                 </BenefitItem>
